@@ -3,8 +3,7 @@
 
 ## COCO DATASET TUTORIAL (YoloX_s baseline)
 
-Export dataset from [CVAT](https://app.cvat.ai/).
-Extract ball
+Export annotated coco-1.0 dataset from [CVAT](https://app.cvat.ai/).
 
 ```latex
 python tools/train.py -f exps/example/custom/custom_coco.py -d 1 -b 6 -o -c data/model/yolox_s.pth
