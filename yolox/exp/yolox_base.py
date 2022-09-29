@@ -77,6 +77,7 @@ class Exp(BaseExp):
         self.basic_lr_per_img = 0.01 / 64.0
         # name of LRScheduler
         self.scheduler = "yoloxwarmcos"
+        self.image_dir_name = "train2017"
         # last #epoch to close augmention like mosaic
         self.no_aug_epochs = 15
         # apply EMA during training
@@ -143,6 +144,7 @@ class Exp(BaseExp):
             dataset = COCODataset(
                 data_dir=self.data_dir,
                 json_file=self.train_ann,
+                name=self.image_dir_name,
                 img_size=self.input_size,
                 preproc=TrainTransform(
                     max_labels=50,
@@ -275,7 +277,7 @@ class Exp(BaseExp):
         valdataset = COCODataset(
             data_dir=self.data_dir,
             json_file=self.val_ann if not testdev else self.test_ann,
-            name="val2017" if not testdev else "test2017",
+            name=self.image_dir_name,
             img_size=self.test_size,
             preproc=ValTransform(legacy=legacy),
         )

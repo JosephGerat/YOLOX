@@ -1,6 +1,15 @@
 <div align="center"><img src="assets/logo.png" width="350"></div>
 <img src="assets/demo.png" >
 
+## COCO DATASET TUTORIAL
+
+Export dataset from [CVAT](https://app.cvat.ai/).
+Edit custom_coco.py and run train script.
+```latex
+python tools/train.py -f exps/example/custom/custom_coco.py -d 1 -b 6 -o -c data/model/yolox_s.pth
+```
+
+
 ## Introduction
 YOLOX is an anchor-free version of YOLO, with a simpler design but better performance! It aims to bridge the gap between research and industrial communities.
 For more details, please refer to our [report on Arxiv](https://arxiv.org/abs/2107.08430).
