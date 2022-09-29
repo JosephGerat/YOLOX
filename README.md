@@ -1,12 +1,19 @@
 <div align="center"><img src="assets/logo.png" width="350"></div>
 <img src="assets/demo.png" >
 
-## COCO DATASET TUTORIAL
+## COCO DATASET TUTORIAL (YoloX_s baseline)
 
 Export dataset from [CVAT](https://app.cvat.ai/).
-Edit custom_coco.py and run train script.
+Extract ball
+
 ```latex
 python tools/train.py -f exps/example/custom/custom_coco.py -d 1 -b 6 -o -c data/model/yolox_s.pth
+
+python tool/export_onnx.py --output-name yolox_s.onnx -f exps/example/custom/yolox_s.py -c YOLOX_outputs/yolox_s/best_ckpt.pth
+
+look and edit script:
+    python onnx_example.py
+
 ```
 
 
