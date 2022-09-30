@@ -12,16 +12,22 @@ class Exp(MyExp):
         super(Exp, self).__init__()
         self.depth = 0.33
         self.width = 0.50
+
+        #self.depth = 0.67
+        #self.width = 0.75
         self.exp_name = os.path.split(os.path.realpath(__file__))[1].split(".")[0]
 
         # Define yourself dataset path
-        self.data_dir = "datasets/ball_ds"
-        self.train_ann = "instances_default.json"
-        self.val_ann = "instances_default_valid.json"
+        self.data_dir = "datasets/lunter"
+        self.train_ann = "instances_train.json"
+        self.val_ann = "instances_valid.json"
         self.image_dir_name = "images"
 
-        self.num_classes = 2
+        self.num_classes = 1
+        self.input_size = (640, 640)
+        self.test_size = (640, 640)
+        #self.multiscale_range = 0
 
-        self.max_epoch = 300
+        self.max_epoch = 100
         self.data_num_workers = 1
-        self.eval_interval = 1
+        self.eval_interval = 3

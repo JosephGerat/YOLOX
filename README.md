@@ -5,10 +5,12 @@
 
 Export annotated coco-1.0 dataset from [CVAT](https://app.cvat.ai/).
 
-```latex
-python tools/train.py -f exps/example/custom/custom_coco.py -d 1 -b 6 -o -c data/model/yolox_s.pth
+Download YOLOX_s [github](https://github.com/Megvii-BaseDetection/YOLOX/releases/download/0.1.1rc0/yolox_s.pth) |.
 
-python tool/export_onnx.py --output-name yolox_s.onnx -f exps/example/custom/yolox_s.py -c YOLOX_outputs/yolox_s/best_ckpt.pth
+```latex
+python tools/train.py -f exps/example/custom/custom_coco.py -d 1 -b 6 -o -c data/yolox_s.pth
+
+python tool/export_onnx.py --output-name yolox_s_custom.onnx -f exps/example/custom/custom_coco.py -c YOLOX_outputs/custom_coco/best_ckpt.pth
 
 look and edit script:
     python onnx_example.py
