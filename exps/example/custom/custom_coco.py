@@ -31,3 +31,6 @@ class Exp(MyExp):
         self.max_epoch = 100
         self.data_num_workers = 1
         self.eval_interval = 3
+        self.enable_mixup = False
+        self.mosaic_scale = (0.5, 1.3)
+        self.degrees = 5.0

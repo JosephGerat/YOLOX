@@ -7,12 +7,17 @@ import random
 import warnings
 from loguru import logger
 
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__),'../'))
+
 import torch
 import torch.backends.cudnn as cudnn
 
 from yolox.core import launch
 from yolox.exp import Exp, get_exp
 from yolox.utils import configure_module, configure_nccl, configure_omp, get_num_devices
+
 
 
 def make_parser():

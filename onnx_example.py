@@ -25,7 +25,7 @@ def run(onnx_model_path, image_path):
         bboxes, normalized_bboxes, scores, classes = preprocess_postprocess.postprocess(out[0][0])
 
         for index in range(len(bboxes)):
-            if scores[index] > 0.4:
+            if scores[index] > 0.7:
                 cv2.rectangle(
                     image,
                     (bboxes[index][0], bboxes[index][1]),
@@ -33,8 +33,8 @@ def run(onnx_model_path, image_path):
                     (255, 0, 0))
                 print(f'Scores {scores[index]}')
 
-        #cv2.imshow('Image', image)
-        #cv2.waitKey(0)
+        cv2.imshow('Image', image)
+        cv2.waitKey(0)
 
     except Exception as e:
         print(e.args)
@@ -44,7 +44,7 @@ image_paths = glob.glob("datasets/images/*.jpg")
 
 for image_path in image_paths:
     run(
-        "yolox_s_custom_depth05.onnx",
+        "yolox_s_b6_custom_update_aug.onnx",
         image_path
     )
 

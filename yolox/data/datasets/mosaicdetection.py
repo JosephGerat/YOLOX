@@ -147,6 +147,9 @@ class MosaicDetection(Dataset):
             mix_img, padded_labels = self.preproc(mosaic_img, mosaic_labels, self.input_dim)
             img_info = (mix_img.shape[1], mix_img.shape[0])
 
+            #cv2.imshow('im', mosaic_img)
+            #cv2.waitKey(0)
+
             # -----------------------------------------------------------------
             # img_info and img_id are not used for training.
             # They are also hard to be specified on a mosaic image.
