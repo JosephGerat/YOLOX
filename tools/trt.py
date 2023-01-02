@@ -7,6 +7,10 @@ import os
 import shutil
 from loguru import logger
 
+import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__),'../'))
+
 import tensorrt as trt
 import torch
 from torch2trt import torch2trt
